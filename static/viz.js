@@ -1,10 +1,3 @@
-$body = $("body");
-
-$(document).on({
-    ajaxStart: function() { $body.addClass("loading");    },
-     ajaxStop: function() { $body.removeClass("loading"); }    
-});
-
 $(document).ready(function() {
     if (!window.console) window.console = {};
     if (!window.console.log) window.console.log = function() {};
@@ -261,7 +254,7 @@ var updater = {
     socket: null,
 
     start: function() {
-        updater.socket = new WebSocket('ws://localhost:7777/websocket');
+        updater.socket = new WebSocket('ws://localhost:80/websocket');
         updater.socket.onmessage = function(event) {
             var newData = JSON.parse(event.data);
             console.log(newData)
