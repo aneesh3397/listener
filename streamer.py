@@ -137,7 +137,7 @@ if __name__ == "__main__":
     asyncio.set_event_loop_policy(AnyThreadEventLoopPolicy())
     app = Application()
     helper = helper()
-    app.listen(7777)
+    app.listen(80)
 
     print('initializing...')
     
