@@ -254,7 +254,7 @@ var updater = {
     socket: null,
 
     start: function() {
-        updater.socket = new WebSocket('ws://localhost:80/websocket');
+        updater.socket = new WebSocket('ws://localhost:5000/websocket');
         updater.socket.onmessage = function(event) {
             var newData = JSON.parse(event.data);
             console.log(newData)
