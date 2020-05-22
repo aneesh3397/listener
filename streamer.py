@@ -137,13 +137,11 @@ if __name__ == "__main__":
     asyncio.set_event_loop_policy(AnyThreadEventLoopPolicy())
     app = Application()
     helper = helper()
-    app.listen(80)
+    app.listen(5000)
 
     print('initializing...')
     
     initializers = np.load('initializers.npy',allow_pickle=True)
-
-    helper = helper()
     warmup = helper.get_update.remote(helper, ['test']*105, initializers)
     ray.wait([warmup],num_returns=1,timeout=None)
     
